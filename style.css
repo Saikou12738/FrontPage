@@ -197,7 +197,7 @@ header a:hover{
 
 @media only screen and (min-width: 305px) and (max-width: 1366px) {  
     #sectionbruh{
-        height: calc(75vh - -120px);
+        height: calc(75vh - -150px);
  
     }
  }
