@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Dumagat Tribe Promotion</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+
+    <header>
+        <nav>
+                
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class="fa fa-bars" style="font-size:24px"></i>
+                
+            </label>
+            <label class="logo">DivLoopers</label>
+            <img src="images/logo.png" width="100" class="imagelogo">
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#CHAPTERS">CHAPTERS</a></li>
+               
+               
+                
+            </ul>
+            
+        </nav>
+        
+    </header>
+    <section id="sectionbruh">
+               
+       
+            
+            
+            <h1>All About  <br> Dumagat Tribe</h1>     
+           
+        
+    </section>
+   
+
+
+
+
+    <div class="slider">
+
+
+        <div class="list">
+
+            <div class="item">
+                <img src="images/pic3.png" alt="">
+
+                <div class="content">
+                    <div class="title">Chapter 1:</div>
+                    <div class="type">INTRODUCTION</div>
+                    <div class="description">
+                        What challenges do the Dumagat people face? How does their culture influence their daily life? What is the structure of their religion? We will explore these questions!
+                    </div>
+                    <div class="button">
+                        <button><a href="https://saikou12738.github.io/Chapter1/#">SEE MORE </a></button>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="images/uyn.jpg" alt="">
+
+                <div class="content">
+                    <div class="title">Chapter 2:</div>
+                    <div class="type">HISTORY</div>
+                    <div class="description">
+                        What challenges do the Dumagat people face? How does their culture influence their daily life? What is the structure of their religion? We will explore these questions!
+                    </div>
+                    <div class="button">
+                        <button>SEE MORE</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="./images/pic1.png" alt="">
+
+                <div class="content">
+                    <div class="title">Chapter 3:</div>
+                    <div class="type">Culture & Tradition</div>
+                    <div class="description">
+                        What challenges do the Dumagat people face? How does their culture influence their daily life? What is the structure of their religion? We will explore these questions!
+                    </div>
+                    <div class="button">
+                        <button>SEE MORE</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="./images/pic2.png" alt="">
+
+                <div class="content">
+                    <div class="title">Chapter 4:</div>
+                    <div class="type">Summary & Conclusion</div>
+                    <div class="description">
+                        What challenges do the Dumagat people face? How does their culture influence their daily life? What is the structure of their religion? We will explore these questions!
+                    </div>
+                    <div class="button">
+                        <button>SEE MORE</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="thumbnail">
+
+            <div class="item">
+                <img src="./images/pic3.png" alt="">
+            </div>
+            <div class="item">
+                <img src="./images/uyn.jpg" alt="">
+            </div>
+            <div class="item">
+                <img src="./images/pic1.png" alt="">
+            </div>
+            <div class="item">
+                <img src="./images/pic2.png" alt="">
+            </div>
+
+        </div>
+
+
+        <div class="nextPrevArrows">
+            
+            <button class="next"> > </button>
+        </div>
+        <div class="leftarrow">
+            <button class="prev"> < </button>
+        </div>
+
+        <div class="content1">
+            <section id="CHAPTERS">
+    
+    </div>
+
+
+
+
+    
+
+
+<script>
+    let nextBtn = document.querySelector('.next')
+let prevBtn = document.querySelector('.prev')
+
+let slider = document.querySelector('.slider')
+let sliderList = slider.querySelector('.slider .list')
+let thumbnail = document.querySelector('.slider .thumbnail')
+let thumbnailItems = thumbnail.querySelectorAll('.item')
+
+thumbnail.appendChild(thumbnailItems[0])
+
+// Function for next button 
+nextBtn.onclick = function() {
+    moveSlider('next')
+}
+
+
+// Function for prev button 
+prevBtn.onclick = function() {
+    moveSlider('prev')
+}
+
+
+function moveSlider(direction) {
+    let sliderItems = sliderList.querySelectorAll('.item')
+    let thumbnailItems = document.querySelectorAll('.thumbnail .item')
+
+    if(direction === 'next'){
+        sliderList.appendChild(sliderItems[0])
+        thumbnail.appendChild(thumbnailItems[0])
+        slider.classList.add('next')
+    } else {
+        sliderList.prepend(sliderItems[sliderItems.length - 1])
+        thumbnail.prepend(thumbnailItems[thumbnailItems.length - 1])
+        slider.classList.add('prev')
+    }
+
+
+    slider.addEventListener('animationend', function() {
+        if(direction === 'next'){
+            slider.classList.remove('next')
+        } else {
+            slider.classList.remove('prev')
+        }
+    }, {once: true}) // Remove the event listener after it's triggered once
+}
+</script>
+</body>
+</html>
